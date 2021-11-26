@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Providing the Accuracy and other related metrics for this logistic classification problem</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <label for="occ_6">is the wife a professional with an advanced degree ?:</label>
+            <select name="occ_6" id="occ_6">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+
+            <label for="occ_husb_2">is the husband a farmer ?:</label>
+            <select name="occ_husb_2" id="occ_husb_2">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+
+
+            <label for="occ_husb_3">Does the husband have a white collared job?:</label>
+            <select name="occ_husb_3" id="occ_husb_3">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+
+
+            <label for="occ_husb_6">is the husband a professional with an advanced degree ?:</label>
+            <select name="occ_husb_6" id="occ_husb_6">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+
+
+            <input type="number" step = "any" name="rate_marriage" id="rate_marriage" placeholder="Rate your marriage on a scale of 1 to 5 " style="width: 290px;"><br>
+            <input type="number" step = "any" name="age" id="age" placeholder="age of wife" style="width: 200px;"><br>
+            <input type="number" step = "any" name="children" id="children" placeholder="number of children in a family" style="width: 290px;"><br>
+            <input type="number" step = "any" name="religious" id="religious" placeholder="level of religiousness on a scale of 1-4" step="any" style="width: 290px;"><br>
+            <input type="number" step = "any" name="educ" id="educ"placeholder="Education" maxlength="50"><br>
+            <input type="submit" value="Predict" style="width: 200px;">
+        </form>
+    </div>
+</div>
+{% endblock %}
